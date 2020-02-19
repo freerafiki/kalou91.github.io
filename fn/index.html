@@ -109,24 +109,6 @@ Nun fehlen uns nur noch einige wenige Angaben, bis wir dich und dein Projekt mit
 </footer>
 
 <script>
-// Tabbed Menu
-function openMenu(evt, menuName) {
-  var i, x, tablinks;
-  x = document.getElementsByClassName("menu");
-  for (i = 0; i < x.length; i++) {
-     x[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablink");
-  for (i = 0; i < x.length; i++) {
-     tablinks[i].className = tablinks[i].className.replace(" w3-black", "");
-  }
-  document.getElementById(menuName).style.display = "block";
-  evt.currentTarget.firstElementChild.className += " w3-black";
-}
-document.getElementById("myLink").click();
-</script> 
- 
-<script><br />
 // Tabbed Menu<br />
 function openMenu(evt, menuName) {<br />
   var i, x, tablinks;<br />
