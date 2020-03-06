@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<title>Landing Page</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+.bgimg {
+  background-image: url('img/colorkkm.png');
+  min-height: 100%;
+  background-repeat; repeat;
+}
+</style>
+<body>
+
+  
+<!-- Sidebar (hidden by default) -->
+<nav class="w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-left w3-padding-48" style="display:none;z-index:2;width:30%;min-width:300px" id="mySidebar">
+  <a href="#Programm" onclick="w3_close()" class="w3-bar-item w3-button">Programm</a>
+  <a href="#Konzept" onclick="w3_close()" class="w3-bar-item w3-button">Konzept</a>
+  <a href="#Karte" onclick="w3_close()" class="w3-bar-item w3-button">Karte</a>
+  <a href="#Personen" onclick="w3_close()" class="w3-bar-item w3-button">Personen</a>
+  <a href="#Impressum" onclick="w3_close()" class="w3-bar-item w3-button">Impressum</a>
+</nav>
+
+<div class="bgimg w3-display-container w3-animate-opacity">
+  <div class="w3-button w3-padding w3-left w3-white" style="margin-top:32px!important;margin-bottom:32px!important;margin-left:32px!important;margin-right:32px!important" onclick="w3_open()">☰</div>
+  <div class="w3-row s1" style="height: 15% !important;">&nbsp;</div>
+  <div class="w3-row">
+    <div class="w3-col s3">&nbsp;</div>
+    <div class="w3-col s9 w3-white">
+      <h1 class="w3-jumbo w3-animate-top w3-wide" style="text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">&nbsp; KIEL KANN MEHR &nbsp;</h1>
+      <h1 class="w3-jumbo w3-animate-top" style="text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">&nbsp; ZUKUNFTSFESTIVAL &nbsp;</h1>
+      <h1 class="w3-jumbo w3-animate-top w3-wide" style="text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">&nbsp; 05.06.2020 &nbsp;</h1>
+    </div>                                                                                
+  </div>
+</div>
+
+
+
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+}
+ 
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+</script>
+</body>
+</html>

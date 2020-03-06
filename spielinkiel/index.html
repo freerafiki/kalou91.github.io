@@ -21,10 +21,15 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Amatic SC", sans-serif}
 <div class="w3-top w3-hide-small">
     <div class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off" id="myNavbar">
         <a href="https://kalou91.github.io/spielinkiel" class="w3-bar-item w3-button">HOME</a>
-        <a href="https://kalou91.github.io/spielinkiel/games.html" class="w3-bar-item w3-button">GAMES</a>
-        <a href="https://kalou91.github.io/spielinkiel/why.html" class="w3-bar-item w3-button">WHY</a>
-        <a href="https://kalou91.github.io/spielinkiel/kids.html" class="w3-bar-item w3-button">ABOUT US</a>
-        <a href="https://kalou91.github.io/spielinkiel/index.html#contact" class="w3-bar-item w3-button">CONTACT</a>
+        <a href="https://kalou91.github.io/spielinkiel/games.html" class="w3-bar-item w3-button button english">GAMES</a>
+        <a href="https://kalou91.github.io/spielinkiel/games.html" class="w3-bar-item w3-button button deutsch">SPIELE</a>
+        <a href="https://kalou91.github.io/spielinkiel/why.html" class="w3-bar-item w3-button button">WHY</a>
+        <a href="https://kalou91.github.io/spielinkiel/kids.html" class="w3-bar-item w3-button button">ABOUT US</a>
+        <a href="https://kalou91.github.io/spielinkiel/index.html#contact" class="w3-bar-item w3-button button">CONTACT</a>
+        <div class="w3-display-topright w3-padding">
+        <a href="javascript:void(0)" onclick="changeLanguage(event, 'deutsch');" id="languageDE" >DE</a> &nbsp;
+        <a href="javascript:void(0)" onclick="changeLanguage(event, 'english');" id="languageEN" >EN</a>
+        </div>
     </div>
 </div>
 
@@ -115,6 +120,22 @@ function openMenu(evt, menuName) {
   evt.currentTarget.firstElementChild.className += " w3-red";
 }
 document.getElementById("myLink").click();
+    
+// is this really working?    
+function changeLanguage(evt, language) {
+	var i, x, button;
+	document.getElementById("languageDE").innerHTML = "sdasd";
+	x = document.getElementsByClassName("button");
+	for (i = 0; i < x.length; i++) {
+		if x[i].classList.contains(language) {
+			x[i].style.display = "block";
+		}
+		else {
+			x[i].style.display = "none";
+		}
+	}
+}
+document.getElementById("languageDE").click();
 </script>
 
 </body>
