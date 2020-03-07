@@ -140,20 +140,20 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Verdana", sans-serif}
 					<label for="mull">Engagiert ihr euch dafür, weniger Müll zu produzieren, beispielsweise durch verpackungsfreie Produkte, Pfandrückgabesysteme oder Nutzung recycelter Materialien?</label>
 				</div>
 				<div class="w3-col s2 w3-text w3-small w3-padding">
-					<input type="radio" id="ja" name="mull" value="ja" style="border:1px solid #ff0000"> <label for="ja">ja</label>
+					<input type="radio" id="jamull" name="mull" value="ja" style="border:1px solid #ff0000" onclick="enableVisibility('fragemull');"> <label for="ja">ja</label>
 				</div>
 				<div class="w3-col s2 w3-text w3-small w3-padding">
-					<input type="radio" id="nein" name="mull" value="nein"> <label for="nein">nein</label>
+					<input type="radio" id="neinmull" name="mull" value="nein" onclick="disableVisibility('fragemull');"> <label for="nein">nein</label>
 				</div>
 				<div class="w3-col s2 w3-text w3-small w3-padding">
-					<input type="radio" id="eb" name="mull" value="eb"> <label for="nein">ein bisschen</label><br>
+					<input type="radio" id="ebmull" name="mull" value="eb" onclick="enableVisibility('fragemull');"> <label for="nein">ein bisschen</label><br>
 				</div>
 			</div>
 			<div class="w3-row">
-				<div class="w3-col s5 w3-text w3-small w3-padding">
+				<div class="w3-col s5 w3-text w3-small w3-padding" id="fragemull" style="display: none;">
 					<label for="wiemull">Wie genau macht ihr das und welche Erfahrungen habt ihr damit gemacht?<br></label>
 				</div>
-				<div class="w3-col s7 w3-text w3-small w3-padding">
+				<div class="w3-col s7 w3-text w3-small w3-padding" id="fragemulltext" style="display: none;">
 					<input type="text" id="wiemull" name="wiemull" style="width: 90%"><br>
 				</div>
 			</div>
@@ -163,30 +163,44 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Verdana", sans-serif}
 					<label for="bioprodukte">Nutzt ihr biologisch produzierte Produkte? / Betreibt ihr ökologische Landwirtschaft?</label>
 				</div>
 				<div class="w3-col s2 w3-text w3-small w3-padding">
-					<input type="radio" id="ja" name="bioprodukte" value="ja"> <label for="ja">ja</label>
+					<input type="radio" id="ja" name="bioprodukte" value="ja" onclick="enableVisibility('fragebio');"> <label for="ja">ja</label>
 				</div>
 				<div class="w3-col s2 w3-text w3-small w3-padding">
-					<input type="radio" id="nein" name="bioprodukte" value="nein"> <label for="nein">nein</label>
+					<input type="radio" id="nein" name="bioprodukte" value="nein" onclick="disableVisibility('fragebio');"> <label for="nein">nein</label>
 				</div>
 				<div class="w3-col s2 w3-text w3-small w3-padding">
-					<input type="radio" id="eb" name="bioprodukte" value="eb"> <label for="nein">ein bisschen</label><br>
+					<input type="radio" id="eb" name="bioprodukte" value="eb" onclick="enableVisibility('fragebio');"> <label for="nein">ein bisschen</label><br>
 				</div>
 			</div>
 			<div class="w3-row">
-				<div class="w3-col s5 w3-text w3-small w3-padding">
+				<div class="w3-col s5 w3-text w3-small w3-padding" id="fragebio" style="display: none;">
 					<label for="wiebioprodukte">Was möchtet ihr uns dazu sagen?<br></label>
 				</div>
-				<div class="w3-col s7 w3-text w3-small w3-padding">
+				<div class="w3-col s7 w3-text w3-small w3-padding" id="fragebiotext" style="display: none;">
 					<input type="text" id="wiebioprodukte" name="wiebioprodukte" style="width: 90%"><br>
 				</div>
 			</div>
 				
 			<div class="w3-row">
-				<div class="w3-col s5 w3-text w3-small w3-padding">
+				<div class="w3-col s6 w3-text w3-small w3-padding">
 					<label for="produktsystem">Zeichnet ihr euch durch ein veganes/vegetarisches Produktsystem aus?<br></label>
 				</div>
-				<div class="w3-col s7 w3-text w3-small w3-padding">
-					<input type="text" id="produktsystem" name="produktsystem" style="width: 90%"><br>
+				<div class="w3-col s2 w3-text w3-small w3-padding">
+					<input type="radio" id="ja" name="bioprodukte" value="ja" onclick="enableVisibility('frageprodukt');"> <label for="ja">ja</label>
+				</div>
+				<div class="w3-col s2 w3-text w3-small w3-padding">
+					<input type="radio" id="nein" name="bioprodukte" value="nein" onclick="disableVisibility('frageprodukt');"> <label for="nein">nein</label>
+				</div>
+				<div class="w3-col s2 w3-text w3-small w3-padding">
+					<input type="radio" id="eb" name="bioprodukte" value="eb" onclick="enableVisibility('frageprodukt');"> <label for="nein">ein bisschen</label><br>
+				</div>
+			</div>
+			<div class="w3-row">
+				<div class="w3-col s5 w3-text w3-small w3-padding" id="frageprodukt" style="display: none;">
+					<label for="wieenergie">Wie genau macht ihr das?</label>
+				</div>
+				<div class="w3-col s7 w3-text w3-small w3-padding" id="frageprodukttext" style="display: none;">
+					<input type="text" name="produktsystem" style="width: 90%" ><br>
 				</div>
 			</div>
 				
@@ -195,20 +209,20 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Verdana", sans-serif}
 					<label for="energie">Achtet ihr darauf, Ressourcen und Energie zu sparen, beispielsweise durch Ökostrom oder Foodsharing-Anbieter?</label>
 				</div>
 				<div class="w3-col s2 w3-text w3-small w3-padding">
-					<input type="radio" id="ja" name="energie" value="ja"> <label for="ja">ja</label>
+					<input type="radio" id="ja" name="energie" value="ja" onclick="enableVisibility('frageenergie');"> <label for="ja">ja</label>
 				</div>
 				<div class="w3-col s2 w3-text w3-small w3-padding">
-					<input type="radio" id="nein" name="energie" value="nein"> <label for="nein">nein</label>
+					<input type="radio" id="nein" name="energie" value="nein" onclick="disableVisibility('frageenergie');"> <label for="nein">nein</label>
 				</div>
 				<div class="w3-col s2 w3-text w3-small w3-padding">
-					<input type="radio" id="eb" name="energie" value="eb"> <label for="nein">ein bisschen</label><br>
+					<input type="radio" id="eb" name="energie" value="eb" onclick="enableVisibility('frageenergie');"> <label for="nein">ein bisschen</label><br>
 				</div>
 			</div>
 			<div class="w3-row">
-				<div class="w3-col s5 w3-text w3-small w3-padding">
+				<div class="w3-col s5 w3-text w3-small w3-padding" id="frageenergie" style="display: none;">
 					<label for="wieenergie">Welche Maßnahmen trefft ihr dafür?<br></label>
 				</div>
-				<div class="w3-col s7 w3-text w3-small w3-padding">
+				<div class="w3-col s7 w3-text w3-small w3-padding" id="frageenergietext" style="display: none;">
 					<input type="text" id="wieenergie" name="wieenergie" style="width: 90%"><br>
 				</div>
 			</div>
@@ -220,20 +234,20 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Verdana", sans-serif}
 						<label for="fairtrade">Achtet ihr beim Kauf und Vertrieb von Produkten auf Zertifizierungen, wie beispielsweise Fairtrade oder Demeter?</label>
 					</div>
 					<div class="w3-col s2 w3-text w3-small w3-padding">
-						<input type="radio" id="ja" name="fairtrade" value="ja"> <label for="ja">ja</label>
+						<input type="radio" id="ja" name="fairtrade" value="ja" onclick="enableVisibility('fragefair');"> <label for="ja">ja</label>
 					</div>
 					<div class="w3-col s2 w3-text w3-small w3-padding">
-						<input type="radio" id="nein" name="fairtrade" value="nein"> <label for="nein">nein</label>
+						<input type="radio" id="nein" name="fairtrade" value="nein" onclick="disableVisibility('fragefair');"> <label for="nein">nein</label>
 					</div>
 					<div class="w3-col s2 w3-text w3-small w3-padding">
-						<input type="radio" id="eb" name="fairtrade" value="eb"> <label for="nein">ein bisschen</label><br>
+						<input type="radio" id="eb" name="fairtrade" value="eb" onclick="enableVisibility('fragefair');"> <label for="nein">ein bisschen</label><br>
 					</div>
 				</div>
 				<div class="w3-row">
-					<div class="w3-col s5 w3-text w3-small w3-padding">
+					<div class="w3-col s5 w3-text w3-small w3-padding" id="fragefair" style="display: none;">
 						<label for="wiefairtrade">Woher bezieht ihre eure Produkte und mit wem arbeitet ihr zusammen?<br></label>
 					</div>
-					<div class="w3-col s7 w3-text w3-small w3-padding">
+					<div class="w3-col s7 w3-text w3-small w3-padding" id="fragefairtext" style="display: none;">
 						<input type="text" id="wiefairtrade" name="wiefairtrade" style="width: 90%"><br>
 					</div>
 				</div>
@@ -243,20 +257,20 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Verdana", sans-serif}
 						<label for="region">Bezieht ihr eure Produkte aus der Region?</label>
 					</div>
 					<div class="w3-col s2 w3-text w3-small w3-padding">
-						<input type="radio" id="ja" name="region" value="ja"> <label for="ja">ja</label>
+						<input type="radio" id="ja" name="region" value="ja" onclick="enableVisibility('frageregion');"> <label for="ja">ja</label>
 					</div>
 					<div class="w3-col s2 w3-text w3-small w3-padding">
-						<input type="radio" id="nein" name="region" value="nein"> <label for="nein">nein</label>
+						<input type="radio" id="nein" name="region" value="nein" onclick="disableVisibility('frageregion');"> <label for="nein">nein</label>
 					</div>
-					<div class="w3-col s2 w3-text w3-small w3-padding">
-						<input type="radio" id="eb" name="region" value="eb"> <label for="nein">ein bisschen</label><br>
+					<div class="w3-col s2 w3-text w3-small w3-padding" >
+						<input type="radio" id="eb" name="region" value="eb" onclick="enableVisibility('frageregion');"> <label for="nein">ein bisschen</label><br>
 					</div>
 				</div>
 			<div class="w3-row">
-				<div class="w3-col s5 w3-text w3-small w3-padding">
+				<div class="w3-col s5 w3-text w3-small w3-padding" id="frageregion" style="display: none;">
 					<label for="wieregion">Wie werden die Produkte transportiert?</label>
 				</div>
-				<div class="w3-col s7 w3-text w3-small w3-padding">
+				<div class="w3-col s7 w3-text w3-small w3-padding" id="frageregiontext" style="display: none;">
 					<input type="text" id="wieregion" name="wieregion" style="width: 90%"><br>
 				</div>
 			</div>
@@ -266,20 +280,20 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Verdana", sans-serif}
 						<label for="hierarchie">Achtet ihr auf faire Arbeitsbedingungen und flache Hierarchien?</label>
 					</div>
 					<div class="w3-col s2 w3-text w3-small w3-padding">
-						<input type="radio" id="ja" name="hierarchie" value="ja"> <label for="ja">ja</label>
+						<input type="radio" id="ja" name="hierarchie" value="ja" onclick="enableVisibility('fragehierarchie');"> <label for="ja">ja</label>
 					</div>
 					<div class="w3-col s2 w3-text w3-small w3-padding">
-						<input type="radio" id="nein" name="hierarchie" value="nein"> <label for="nein">nein</label>
+						<input type="radio" id="nein" name="hierarchie" value="nein" onclick="disableVisibility('fragehierarchie');"> <label for="nein">nein</label>
 					</div>
 					<div class="w3-col s2 w3-text w3-small w3-padding">
-						<input type="radio" id="eb" name="hierarchie" value="eb"> <label for="nein">ein bisschen</label><br>
+						<input type="radio" id="eb" name="hierarchie" value="eb" onclick="enableVisibility('fragehierarchie');"> <label for="nein">ein bisschen</label><br>
 					</div>
 				</div>
 			<div class="w3-row">
-				<div class="w3-col s5 w3-text w3-small w3-padding">
+				<div class="w3-col s5 w3-text w3-small w3-padding" id="fragehierarchie" style="display: none;">
 					<label for="wiehierarchie">Wie genau setzt ihr das um?</label>
 				</div>
-				<div class="w3-col s7 w3-text w3-small w3-padding">
+				<div class="w3-col s7 w3-text w3-small w3-padding" id="fragehierarchietext" style="display: none;">
 					<input type="text" id="wiehierarchie" name="wiehierarchie" style="width: 90%"><br>
 				</div>
 			</div>
@@ -291,20 +305,20 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Verdana", sans-serif}
 						<label for="sozial">Engagiert ihr euch für mehr soziale Gerechtigkeit?</label>
 					</div>
 					<div class="w3-col s2 w3-text w3-small w3-padding">
-						<input type="radio" id="ja" name="sozial" value="ja"> <label for="ja">ja</label>
+						<input type="radio" id="ja" name="sozial" value="ja" onclick="enableVisibility('fragesozial');"> <label for="ja">ja</label>
 					</div>
 					<div class="w3-col s2 w3-text w3-small w3-padding">
-						<input type="radio" id="nein" name="sozial" value="nein"> <label for="nein">nein</label>
+						<input type="radio" id="nein" name="sozial" value="nein" onclick="disableVisibility('fragesozial');"> <label for="nein">nein</label>
 					</div>
 					<div class="w3-col s2 w3-text w3-small w3-padding">
-						<input type="radio" id="eb" name="sozial" value="eb"> <label for="nein">ein bisschen</label><br>
+						<input type="radio" id="eb" name="sozial" value="eb" onclick="enableVisibility('fragesozial');"> <label for="nein">ein bisschen</label><br>
 					</div>
 				</div>
 				<div class="w3-row">
-					<div class="w3-col s5 w3-text w3-small w3-padding">
+					<div class="w3-col s5 w3-text w3-small w3-padding" id="fragesozial" style="display: none;">
 						<label for="wiesozial">Wie genau macht ihr das?</label>
 					</div>
-					<div class="w3-col s7 w3-text w3-small w3-padding">
+					<div class="w3-col s7 w3-text w3-small w3-padding" id="fragesozialtext" style="display: none;">
 						<input type="text" id="wiesozial" name="wiesozial" style="width: 90%"><br>
 					</div>
 				</div>
@@ -314,20 +328,20 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Verdana", sans-serif}
 						<label for="austausch">Engagiert ihr euch für mehr kulturellen Austausch?</label>
 					</div>
 					<div class="w3-col s2 w3-text w3-small w3-padding">
-						<input type="radio" id="ja" name="austausch" value="ja"> <label for="ja">ja</label>
+						<input type="radio" id="ja" name="austausch" value="ja" onclick="enableVisibility('frageaustausch');"> <label for="ja">ja</label>
 					</div>
 					<div class="w3-col s2 w3-text w3-small w3-padding">
-						<input type="radio" id="nein" name="austausch" value="nein"> <label for="nein">nein</label>
+						<input type="radio" id="nein" name="austausch" value="nein" onclick="disableVisibility('frageaustausch');"> <label for="nein">nein</label>
 					</div>
 					<div class="w3-col s2 w3-text w3-small w3-padding">
-						<input type="radio" id="eb" name="austausch" value="eb"> <label for="nein">ein bisschen</label><br>
+						<input type="radio" id="eb" name="austausch" value="eb" onclick="enableVisibility('frageaustausch');"> <label for="nein">ein bisschen</label><br>
 					</div>
 				</div>
 				<div class="w3-row">
-					<div class="w3-col s5 w3-text w3-small w3-padding">
+					<div class="w3-col s5 w3-text w3-small w3-padding" id="frageaustausch" style="display: none;">
 						<label for="wieaustausch">Wie genau macht ihr das?</label>
 					</div>
-					<div class="w3-col s7 w3-text w3-small w3-padding">
+					<div class="w3-col s7 w3-text w3-small w3-padding" id="frageaustauschtext" style="display: none;">
 						<input type="text" id="wieaustausch" name="wieaustausch" style="width: 90%"><br>
 					</div>
 				</div>
@@ -337,20 +351,20 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Verdana", sans-serif}
 						<label for="diversity">Engagiert ihr euch für (Bio-) Diversität?</label>
 					</div>
 					<div class="w3-col s2 w3-text w3-small w3-padding">
-						<input type="radio" id="ja" name="diversity" value="ja"> <label for="ja">ja</label>
+						<input type="radio" id="ja" name="diversity" value="ja" onclick="enableVisibility('fragediversity');"> <label for="ja">ja</label>
 					</div>
 					<div class="w3-col s2 w3-text w3-small w3-padding">
-						<input type="radio" id="nein" name="diversity" value="nein"> <label for="nein">nein</label>
+						<input type="radio" id="nein" name="diversity" value="nein" onclick="disableVisibility('fragediversity');"> <label for="nein">nein</label>
 					</div>
 					<div class="w3-col s2 w3-text w3-small w3-padding">
-						<input type="radio" id="eb" name="diversity" value="eb"> <label for="nein">ein bisschen</label><br>
+						<input type="radio" id="eb" name="diversity" value="eb" onclick="enableVisibility('fragediversity');"> <label for="nein">ein bisschen</label><br>
 					</div>
 				</div>
 				<div class="w3-row">
-					<div class="w3-col s5 w3-text w3-small w3-padding">
+					<div class="w3-col s5 w3-text w3-small w3-padding" id="fragediversity" style="display: none;">
 						<label for="wiediversity">Wie genau macht ihr das?</label>
 					</div>
-					<div class="w3-col s7 w3-text w3-small w3-padding">
+					<div class="w3-col s7 w3-text w3-small w3-padding" id="fragediversitytext" style="display: none;">
 						<input type="text" id="wiediversity" name="wiediversity" style="width: 90%"><br>
 					</div>
 				</div>
@@ -360,20 +374,20 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Verdana", sans-serif}
 						<label for="bereich">Engagiert ihr euch in einem anderen sozialen Bereich, den wir bisher nicht genannt haben?</label>
 					</div>
 					<div class="w3-col s2 w3-text w3-small w3-padding">
-						<input type="radio" id="ja" name="bereich" value="ja"> <label for="ja">ja</label>
+						<input type="radio" id="ja" name="bereich" value="ja" onclick="enableVisibility('fragebereich');"> <label for="ja">ja</label>
 					</div>
 					<div class="w3-col s2 w3-text w3-small w3-padding">
-						<input type="radio" id="nein" name="bereich" value="nein"> <label for="nein">nein</label>
+						<input type="radio" id="nein" name="bereich" value="nein" onclick="disableVisibility('fragebereich');"> <label for="nein">nein</label>
 					</div>
 					<div class="w3-col s2 w3-text w3-small w3-padding">
-						<input type="radio" id="eb" name="bereich" value="eb"> <label for="nein">ein bisschen</label><br>
+						<input type="radio" id="eb" name="bereich" value="eb" onclick="enableVisibility('fragebereich');"> <label for="nein">ein bisschen</label><br>
 					</div>
 				</div>
 				<div class="w3-row">
-					<div class="w3-col s5 w3-text w3-small w3-padding">
+					<div class="w3-col s5 w3-text w3-small w3-padding" id="fragebereich" style="display: none;">
 						<label for="wiebereich">In welchem und wie genau?</label>
 					</div>
-					<div class="w3-col s7 w3-text w3-small w3-padding">
+					<div class="w3-col s7 w3-text w3-small w3-padding" id="fragebereichtext" style="display: none;">
 						<input type="text" id="wiebereich" name="wiebereich" style="width: 90%"><br>
 					</div>
 				</div>
@@ -401,17 +415,38 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Verdana", sans-serif}
 					</p>
 				</div>
 				<div class="w3-row w3-text w3-small w3-padding">
-					<div class="w3-col s1 w3-text w3-small w3-padding">
-						<input type="radio" id="nein" name="top3" value="1"> <label for="1">1</label>
+					<div class="w3-col s4 w3-text w3-small w3-padding">
+						<input type="radio" id="nein" name="top3" value="1"> <label for="1">Müll</label>
 					</div>
-					<div class="w3-col s1 w3-text w3-small w3-padding">
-						<input type="radio" id="nein" name="top3" value="1"> <label for="1">1</label>
+					<div class="w3-col s4 w3-text w3-small w3-padding">
+						<input type="radio" id="nein" name="top3" value="2"> <label for="2">BioProdukte</label>
 					</div>
-					<div class="w3-col s1 w3-text w3-small w3-padding">
-						<input type="radio" id="nein" name="top3" value="1"> <label for="1">1</label>
+					<div class="w3-col s4 w3-text w3-small w3-padding">
+						<input type="radio" id="nein" name="top3" value="3"> <label for="3">Vegan</label>
 					</div>
-					<div class="w3-col s1 w3-text w3-small w3-padding">
-						<input type="radio" id="nein" name="top3" value="1"> <label for="1">1</label>
+					<div class="w3-col s4 w3-text w3-small w3-padding">
+						<input type="radio" id="nein" name="top3" value="4"> <label for="4">Energie</label>
+					</div>
+					<div class="w3-col s4 w3-text w3-small w3-padding">
+						<input type="radio" id="nein" name="top3" value="5"> <label for="5">Fairtrade</label>
+					</div>
+					<div class="w3-col s4 w3-text w3-small w3-padding">
+						<input type="radio" id="nein" name="top3" value="6"> <label for="6">Regional</label>
+					</div>
+					<div class="w3-col s4 w3-text w3-small w3-padding">
+						<input type="radio" id="nein" name="top3" value="7"> <label for="7">Hierarchien</label>
+					</div>
+					<div class="w3-col s4 w3-text w3-small w3-padding">
+						<input type="radio" id="nein" name="top3" value="8"> <label for="8">Sozial</label>
+					</div>
+					<div class="w3-col s4 w3-text w3-small w3-padding">
+						<input type="radio" id="nein" name="top3" value="9"> <label for="9">Austausch</label>
+					</div>
+					<div class="w3-col s4 w3-text w3-small w3-padding">
+						<input type="radio" id="nein" name="top3" value="10"> <label for="10">Biodiversität</label>
+					</div>
+					<div class="w3-col s4 w3-text w3-small w3-padding">
+						<input type="radio" id="nein" name="top3" value="11"> <label for="11">Anderen Bereich</label>
 					</div>
 				</div>
 				
@@ -438,7 +473,21 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Verdana", sans-serif}
     </div>
 </div>
 
+<script>
 
+function enableVisibility(idQuestion) {
+
+	document.getElementById(idQuestion).style.display = "block";
+	document.getElementById(idQuestion.concat("text")).style.display = "block";
+	
+}
+function disableVisibility(idQuestion) {
+
+	document.getElementById(idQuestion).style.display = "none";
+	document.getElementById(idQuestion.concat("text")).style.display = "none";
+	
+}
+</script>
 
 </body>
 </html>
