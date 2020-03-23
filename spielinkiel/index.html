@@ -19,24 +19,37 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Amatic SC", sans-serif}
 <body>
 
 <div class="w3-top w3-hide-small">
-    <div class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off" id="myNavbar">
+    <div class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off" id="myNavbar" >
+			<div id="leftpart-english" >
         <a href="https://kalou91.github.io/spielinkiel" class="w3-bar-item w3-button">HOME</a>
         <a href="https://kalou91.github.io/spielinkiel/games.html" class="w3-bar-item w3-button button english">GAMES</a>
-        <a href="https://kalou91.github.io/spielinkiel/games.html" class="w3-bar-item w3-button button deutsch">SPIELE</a>
         <a href="https://kalou91.github.io/spielinkiel/why.html" class="w3-bar-item w3-button button">WHY</a>
         <a href="https://kalou91.github.io/spielinkiel/kids.html" class="w3-bar-item w3-button button">ABOUT US</a>
         <a href="https://kalou91.github.io/spielinkiel/index.html#contact" class="w3-bar-item w3-button button">CONTACT</a>
-        <div class="w3-display-topright w3-padding">
-        <a href="javascript:void(0)" onclick="changeLanguage(event, 'deutsch');" id="languageDE" >DE</a> &nbsp;
-        <a href="javascript:void(0)" onclick="changeLanguage(event, 'english');" id="languageEN" >EN</a>
-        </div>
+			</div>
+			<div id="leftpart-deutsch" style="display: none">
+        <a href="https://kalou91.github.io/spielinkiel" class="w3-bar-item w3-button">HOME</a>
+        <a href="https://kalou91.github.io/spielinkiel/games.html" class="w3-bar-item w3-button button english">SPIELE</a>
+        <a href="https://kalou91.github.io/spielinkiel/why.html" class="w3-bar-item w3-button button">WARUM</a>
+        <a href="https://kalou91.github.io/spielinkiel/kids.html" class="w3-bar-item w3-button button">WER SIND WIR</a>
+        <a href="https://kalou91.github.io/spielinkiel/index.html#contact" class="w3-bar-item w3-button button">KONTAKT</a>
+			</div>
+			<div class="w3-display-topright" style="padding-right: 30px;">
+				<div class="w3-button">
+        	<a href="#de" onclick="changeLanguage('deutsch');" id="languageDE" ><img src="img/germany-flag-3d-icon-32.png"></a>
+				</div>
+				&nbsp;
+				<div class="w3-button">
+					<a href="#en" onclick="changeLanguage('english');" id="languageEN" ><img src="img/united-kingdom-flag-3d-icon-32.png"></a>
+				</div>
+			</div>
     </div>
 </div>
 
 <!-- Header with image -->
 <header class="bgimg w3-display-container w3-grayscale-min" id="home">
   <div class="w3-display-bottomleft w3-padding">
-    <span class="w3-tag w3-xlarge">An Amazing Kids Production..</span>
+    <span class="w3-tag w3-xlarge" id="test">An Amazing Kids Production..</span>
   </div>
   <div class="w3-display-middle w3-center">
     <span class="w3-text-white w3-hide-small" style="font-size:100px">The new generation <br>of Board games!</span>
@@ -99,43 +112,26 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Amatic SC", sans-serif}
   </div>
 </div>
 
-<!-- Footer -->
-<footer class="w3-center w3-black w3-padding-48 w3-xxlarge">
-  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
-</footer>
 
 <script>
-// Tabbed Menu
-function openMenu(evt, menuName) {
-  var i, x, tablinks;
-  x = document.getElementsByClassName("menu");
-  for (i = 0; i < x.length; i++) {
-     x[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablink");
-  for (i = 0; i < x.length; i++) {
-     tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
-  }
-  document.getElementById(menuName).style.display = "block";
-  evt.currentTarget.firstElementChild.className += " w3-red";
-}
-document.getElementById("myLink").click();
-    
-// is this really working?    
-function changeLanguage(evt, language) {
-	var i, x, button;
-	document.getElementById("languageDE").innerHTML = "sdasd";
-	x = document.getElementsByClassName("button");
-	for (i = 0; i < x.length; i++) {
-		if x[i].classList.contains(language) {
-			x[i].style.display = "block";
-		}
-		else {
-			x[i].style.display = "none";
-		}
+// is this really working?    YES!
+function changeLanguage(lang) {
+	if (lang == 'english') {
+		document.getElementById("leftpart-deutsch").style.display = "none";
+		document.getElementById("leftpart-english").style.display = "inline";
+	}
+	if (lang == 'deutsch') {
+		document.getElementById("leftpart-deutsch").style.display = "inline";
+		document.getElementById("leftpart-english").style.display = "none";
 	}
 }
-document.getElementById("languageDE").click();
+var hashtaglanguage = window.location.hash;
+if (hashtaglanguage == "#en") {
+	document.getElementById("languageEN").click();
+}
+if (hashtaglanguage == "#de") {
+	document.getElementById("languageDE").click();
+}
 </script>
 
 </body>

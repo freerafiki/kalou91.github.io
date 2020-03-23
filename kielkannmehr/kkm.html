@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<title>Landing Page</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+body,h1 {font-family: "SourceCode", sans-serif}
+body, html {height: 100%}
+	.bgimg {
+		background-image: url('img_w_0.png');
+		min-height: 100%;
+		background-size: 55% 60%;
+		background-repeat; repeat;
+	}
+	.together a {
+		color: #FFFFFF;
+		text-decoration: none;
+	}
+	div.nounderscore {
+		text-decoration: none;
+	}
+	div.rotated {
+			-webkit-transform: rotate(90deg);
+			-moz-transform: rotate(90deg);
+			-o-transform: rotate(90deg);
+			-ms-transform: rotate(90deg);
+			transform: rotate(90deg);
+	}
+</style>
+<body>
+
+  
+
+     <!-- Sidebar (hidden by default) -->
+     <nav class="w3-sidebar w3-bar-block w3-top w3-animate-left" style="display:none;z-index:2;width:25%;min-width:300px" id="mySidebar">
+      <div class="w3-padding w3-left w3-white rotated" style="margin-top:32px!important;margin-bottom:32px!important;margin-left:32px!important;margin-right:32px!important;" onclick="w3_close()">
+       ☰
+      </div>
+      <div class="w3-row w3-padding">
+       <a href="#Programm" onclick="sidebar_to_menu('Programm')" class="w3-bar-item" style="text-decoration: none;">
+        <img src="https://cdn.website-editor.net/6ceb4919ad7340f9bfcd8a41b9113bc8/dms3rep/multi/Symbol_5.png" width="30px"/>
+        &nbsp; Programm
+       </a>
+      </div>
+      <div class="w3-row w3-padding">
+       <a href="#Konzept" onclick="sidebar_to_menu('Konzept')" class="w3-bar-item" style="text-decoration: none;">
+        <img src="https://cdn.website-editor.net/6ceb4919ad7340f9bfcd8a41b9113bc8/dms3rep/multi/Symbol_15.png" width="30px"/>
+        &nbsp; Konzept
+       </a>
+      </div>
+      <div class="w3-row w3-padding">
+       <a href="#Karte" onclick="sidebar_to_menu('Karte')" class="w3-bar-item" style="text-decoration: none;">
+        <img src="https://cdn.website-editor.net/6ceb4919ad7340f9bfcd8a41b9113bc8/dms3rep/multi/Symbol_3.png" width="30px"/>
+        &nbsp; Karte
+       </a>
+      </div>
+      <div class="w3-row w3-padding">
+       <a href="#Personen" onclick="sidebar_to_menu('Personen')" class="w3-bar-item" style="text-decoration: none;">
+        <img src="https://cdn.website-editor.net/6ceb4919ad7340f9bfcd8a41b9113bc8/dms3rep/multi/Symbol_0.png" width="30px"/>
+        &nbsp; Personen
+       </a>
+      </div>
+      <div class="w3-row w3-padding">
+       <a href="#Impressum" onclick="sidebar_to_menu('Impressum')" class="w3-bar-item" style="text-decoration: none;">
+        <img src="https://cdn.website-editor.net/6ceb4919ad7340f9bfcd8a41b9113bc8/dms3rep/multi/Symbol_2.png" width="30px"/>
+        &nbsp; Impressum
+       </a>
+      </div>
+      <div class="w3-row w3-padding">
+       <a href="#Impressum" onclick="location.href = 'anmeldeformular';" class="w3-bar-item" style="text-decoration: none;">
+        <img src="https://cdn.website-editor.net/6ceb4919ad7340f9bfcd8a41b9113bc8/dms3rep/multi/Symbol_4.png" width="30px"/>
+        &nbsp; Formular
+       </a>
+      </div>
+     </nav>
+     <!-- MENUUUUU -->
+     <nav class="w3-sidebar w3-bar-block w3-top w3-animate-left" style="display:none;z-index:2;width:70%;min-width:500px" id="menu">
+      <div class="w3-row">
+       <div class="w3-col s2">
+        <div class="w3-padding w3-left w3-white" style="margin-top:32px!important;margin-bottom:32px!important;margin-left:32px!important;margin-right:32px!important" onclick="menu_to_sidebar()">
+         ☰
+        </div>
+       </div>
+       <div class="w3-col s9" style="margin-top:32px!important;margin-bottom:32px!important;margin-left:16px!important;margin-right:16px!important">
+        <a href="#Programm" onclick="sidebar_to_menu('Programm')" style="text-decoration: none; padding:3px">
+         <img src="https://cdn.website-editor.net/6ceb4919ad7340f9bfcd8a41b9113bc8/dms3rep/multi/Symbol_5.png" width="30px"/>
+         <p class="menucat" id="programmcat" style="display: none; text-decoration: none;">
+          Programm
+         </p>
+        </a>
+        <a href="#Konzept" onclick="sidebar_to_menu('Konzept')" style="text-decoration: none; padding:3px">
+         <img src="https://cdn.website-editor.net/6ceb4919ad7340f9bfcd8a41b9113bc8/dms3rep/multi/Symbol_15.png" width="30px"/>
+         <p class="menucat" id="konzeptcat" style="display: none; text-decoration: none;">
+          &nbsp; Konzept
+         </p>
+        </a>
+        <a href="#Karte" onclick="sidebar_to_menu('Karte')" style="text-decoration: none; padding:3px">
+         <img src="https://cdn.website-editor.net/6ceb4919ad7340f9bfcd8a41b9113bc8/dms3rep/multi/Symbol_3.png" width="30px"/>
+         <p class="menucat" id="kartecat" style="display: none; text-decoration: none;">
+          &nbsp; Karte
+         </p>
+        </a>
+        <a href="#Personen" onclick="sidebar_to_menu('Personen')" style="text-decoration: none; padding:3px">
+         <img src="https://cdn.website-editor.net/6ceb4919ad7340f9bfcd8a41b9113bc8/dms3rep/multi/Symbol_0.png" width="30px"/>
+         <p class="menucat" id="personencat" style="display: none; text-decoration: none;">
+          &nbsp; Personen
+         </p>
+        </a>
+        <a href="#Impressum" onclick="sidebar_to_menu('Impressum')" style="text-decoration: none; padding:3px">
+         <img src="https://cdn.website-editor.net/6ceb4919ad7340f9bfcd8a41b9113bc8/dms3rep/multi/Symbol_2.png" width="30px"/>
+         <p class="menucat" id="impressumcat" style="display: none; text-decoration: none;">
+          &nbsp; Impressum
+         </p>
+        </a>
+       </div>
+      </div>
+      <!-- THE WRITTEN STUFF -->
+      <div class="w3-row" id="programmtext" style="display:none;">
+       <div class="w3-col s2">
+        &nbsp;
+       </div>
+       <div class="w3-col s8">
+        <h2>
+         Programm
+        </h2>
+        beispiel
+       </div>
+      </div>
+      <!--  KONZEPT -->
+      <div class="w3-row" id="konzepttext" style="display:none;">
+       <div class="w3-col s2">
+        &nbsp;
+       </div>
+       <div class="w3-col s8">
+        <h2>
+         Konzept
+        </h2>
+        beispiel
+       </div>
+      </div>
+      <!--  Karte -->
+      <div class="w3-row" id="kartevm" style="display:none;">
+       <div class="w3-col s2">
+        &nbsp;
+       </div>
+       <div class="w3-col s8">
+        <div style="text-align: center;">
+         <iframe style="display: inline-block; border: none" src="https://kartevonmorgen.org/#/?center=54.335,10.137&zoom=12.00&left=show" width="100%" height="580">
+         </iframe>
+         <iframe style="display: inline-block; zoom: 0.7; -moz-transform:scale(0.7); -moz-transform-origin: 0 0; -o-transform: scale(0.7); -o-transform-origin: 0 0; -webkit-transform: scale(0.7); -webkit-transform-origin: 0 0;">
+         </iframe>
+        </div>
+       </div>
+      </div>
+      <!--  PERSONEN -->
+      <div class="w3-row" id="personentext" style="display:none;">
+       <div class="w3-col s2">
+        &nbsp;
+       </div>
+       <div class="w3-col s8">
+        <h2>
+         Personen
+        </h2>
+        beispiel
+       </div>
+      </div>
+      <!--  IMPRESSUM -->
+      <div class="w3-row" id="impressumtext" style="display:none;">
+       <div class="w3-col s2">
+        &nbsp;
+       </div>
+       <div class="w3-col s8">
+        <h2>
+         Impressum
+        </h2>
+        beispiel
+       </div>
+      </div>
+     </nav>
+     <div class="bgimg w3-display-container w3-animate-opacity" id="1705839034" data-uialign="center">
+      <div class="w3-padding w3-left w3-white" style="margin-top:32px!important;margin-bottom:32px!important;margin-left:32px!important;margin-right:32px!important" onclick="w3_open()">
+       ☰
+      </div>
+      <div class="w3-row s1" style="height: 15% !important;">
+       &nbsp;
+      </div>
+      <div class="w3-row">
+       <div class="w3-col s3" id="empty" style="">
+        &nbsp;
+       </div>
+       <div class="w3-col s9 w3-white" id="title" style="">
+        <h1 class="w3-jumbo w3-animate-right w3-wide" style="text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; padding-left:20px;">
+         <p font-family="Roboto Mono">
+          KIEL KANN MEHR
+         </p>
+        </h1>
+        <h1 class="w3-jumbo w3-animate-right" style="text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; padding-left:20px;">
+         <p font-family="Roboto Mono">
+          ZUKUNFTSFESTIVAL
+         </p>
+        </h1>
+        <h1 class="w3-jumbo w3-animate-right w3-wide" style="text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; padding-left:20px;">
+         <p font-family="Roboto Mono">
+          05.06.2020
+         </p>
+        </h1>
+       </div>
+      </div>
+     </div>
+     <script id="1939224650">
+      // Script to open and close sidebar
+        function w3_open() {
+          document.getElementById("mySidebar").style.display = "block";
+        	document.getElementById("empty").className = "w3-col s5";
+        	document.getElementById("title").className = "w3-col s7 w3-white";
+        }
+        function w3_close() {
+          document.getElementById("mySidebar").style.display = "none";
+        	document.getElementById("empty").className = "w3-col s3";
+        	document.getElementById("title").className = "w3-col s9 w3-white";
+        }
+        function sidebar_to_menu(cat) {
+        	document.getElementById("mySidebar").style.display = "none";
+            document.getElementById("menu").style.display = "block";
+        	document.getElementById("title").style.display = "none";
+        	if (cat == 'Konzept') {
+        		document.getElementById("konzeptcat").style.display = "inline";
+        		document.getElementById("konzepttext").style.display = "inline";
+        	}
+        	else {
+        		document.getElementById("konzeptcat").style.display = "none";
+        		document.getElementById("konzepttext").style.display = "none";
+        	}
+        	if (cat == 'Programm') {
+        		document.getElementById("programmcat").style.display = "inline";
+            	document.getElementById("programmtext").style.display = "inline";	
+        	}
+        	else {
+        		document.getElementById("programmcat").style.display = "none";
+        		document.getElementById("programmtext").style.display = "none";
+        	}
+        	if (cat == 'Karte') {
+        		document.getElementById("kartecat").style.display = "inline";
+        		document.getElementById("kartevm").style.display = "inline";
+        	}
+        	else {
+        		document.getElementById("kartecat").style.display = "none";
+        		document.getElementById("kartevm").style.display = "none";
+        	}
+        	if (cat == 'Personen') {
+        		document.getElementById("personencat").style.display = "inline";
+        		document.getElementById("personentext").style.display = "inline";
+        	}
+        	else {
+        		document.getElementById("personencat").style.display = "none";
+        		document.getElementById("personentext").style.display = "none";
+        	}
+        	if (cat == 'Impressum') {
+        		document.getElementById("impressumcat").style.display = "inline";
+        		document.getElementById("impressumtext").style.display = "inline";
+        	}
+        	else {
+        		document.getElementById("impressumcat").style.display = "none";
+        		document.getElementById("impressumtext").style.display = "none";
+        	}
+        }
+        function menu_to_sidebar() {
+        	document.getElementById("menu").style.display = "none";
+            document.getElementById("mySidebar").style.display = "block";
+        	document.getElementById("title").style.display = "block";
+        	document.getElementById("empty").className = "w3-col s5";
+        	document.getElementById("title").className = "w3-col s7 w3-white";
+        }
+     </script>
+</body>
+</html>
