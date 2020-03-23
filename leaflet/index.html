@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
    crossorigin=""/>
@@ -22,14 +21,67 @@
 		background-position: center;
 		background-size: cover;
 	}
-	#mapid { height: 180px; }
+	#mapid { 
+		width: 900px;
+		height: 600px; 
+	}
 </style>
 <body>
 
 <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
   <div class="w3-display-middle w3-center">
-    <div id="mapid"></div>
-		<script>var mymap = L.map('mapid').setView([51.505, -0.09], 13);</script> 
+    <div id="mapid" class="w3-center map" ></div>
+		<script>
+			var mymap = L.map('mapid').setView([45.43, 12.33], 13);
+			var OpenStreetMap_DE = L.tileLayer('https://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png', {
+			maxZoom: 18,
+			attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+			}).addTo(mymap);
+			var marker = L.marker([45.43, 12.33]).addTo(mymap);
+		</script>
+		<div class="w3-button w3-text w3-black" onclick="draw_pol()">Draw a random polygon</div>
+		<div class="w3-button w3-text w3-black" onclick="draw_line()">Draw a random line</div>
+		<script>
+		function draw_pol() {
+			var polygon = L.polygon([
+				[45.43 + (Math.random() * 0.04 - 0.02), 12.33 + (Math.random() * 0.04 - 0.02)],
+				[45.4389 + (Math.random() * 0.04 - 0.02), 12.3407 + (Math.random() * 0.04 - 0.02)],
+				[45.4407 + (Math.random() * 0.04 - 0.02), 12.3313 + (Math.random() * 0.04 - 0.02)]
+				]).addTo(mymap);
+			}
+		function draw_line() {
+			var pointA = new L.LatLng(45.43 + (Math.random() * 0.05 - 0.025), 12.33 + (Math.random() * 0.05 - 0.025));
+			var pointB = new L.LatLng(45.43 + (Math.random() * 0.05 - 0.025), 12.33 + (Math.random() * 0.05 - 0.025));
+			var pointList = [pointA, pointB];
+
+			var firstpolyline = new L.Polyline(pointList, {
+					color: 'red',
+					weight: 3,
+					opacity: 0.5,
+					smoothFactor: 1
+			});
+			firstpolyline.addTo(mymap);
+		}
+		var popup = L.popup();
+
+		function onMapClick(e) {
+			var pointA = new L.LatLng(45.43, 12.33);
+			var pointList = [pointA, e.latlng];
+			var firstpolyline = new L.Polyline(pointList, {
+					color: 'green',
+					weight: 3,
+					opacity: 0.5,
+					smoothFactor: 1
+				});
+			firstpolyline.addTo(mymap);
+			popup
+        .setLatLng(e.latlng)
+        .setContent("Sei andato a " + e.latlng.toString() + ", quando avremo le nostre fantastiche mappe ti diro anche dov'e!")
+        .openOn(mymap);
+		}
+
+		mymap.on('click', onMapClick);
+		</script>
   </div>
 </div>
 
