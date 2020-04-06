@@ -1,23 +1,85 @@
 <!DOCTYPE html>
 <html>
-<title>KKM Handy</title>
+<title>KKM Templates</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Courier+New">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <style>
-body,h1 {font-family: "Courier New", sans-serif}
+body,h1 {font-family: "Raleway", sans-serif}
 body, html {height: 100%}
 .bgimg {
-  background-image: url('Muster_aus_Symbolen.png');
+  background-image: url('../img/sunset-4801688_1920.jpg');
   min-height: 100%;
   background-position: center;
   background-size: cover;
 }
 </style>
 <body>
+	
+<!-- MAIN VIEW -->
+<div class="bgimg w3-display-container w3-animate-opacity" id="1705839034" data-uialign="center">
+	<div class="w3-display-middle w3-text w3-xlarge">HANDY VERSION</div>
+</div>
 
-<h1>HANDY VERSION</h1>
+<script id="1939224650">
+// Script to open and close sidebar
+	function w3_open() {
+			document.getElementById("mySidebar").style.display = "inline";
+			document.getElementById("space_kkm").style.display = "none";
+			document.getElementById("space_kkm50").style.display = "inline";
+			document.getElementById("kkm").style.display = "none";
+			document.getElementById("kkm50").style.display = "inline";
+	}
+	function w3_close() {
+			document.getElementById("mySidebar").style.display = "none";
+		document.getElementById("space_kkm").style.display = "inline";
+			document.getElementById("space_kkm50").style.display = "none";
+			document.getElementById("kkm").style.display = "inline";
+			document.getElementById("kkm50").style.display = "none";
+	}
+	function sidebar_to_menu(category) {
+		document.getElementById("mySidebar").style.display = "none";
+			document.getElementById("menu").style.display = "inline";
+		document.getElementById("kkm").style.display = "none";
+		document.getElementById("kkm50").style.display = "none";
+		hide_menu_cats();
+		hide_menu_texts();
+		show_text(category);
+	}
+	function change_cat_menu(category) {
+			hide_menu_cats();
+			hide_menu_texts();
+			show_text(category);
+	}
+	function show_text(category) {
+			var category_name = category.concat("cat");
+			document.getElementById(category_name).style.display = "inline";
+			var category_text = category.concat("text");
+			document.getElementById(category_text).style.display = "inline";
+	}
+	function hide_menu_cats() {
+			var menu_cats = document.getElementsByClassName("menucat")
+	for (i = 0; i < menu_cats.length; i++) {
+		menu_cats[i].style.display = "none";
+	} 
+	}
+	function hide_menu_texts() {
+			var menu_texts = document.getElementsByClassName("menutext")
+	for (i = 0; i < menu_texts.length; i++) {
+		menu_texts[i].style.display = "none";
+	} 
+	}
+	function menu_to_sidebar() {
+		document.getElementById("menu").style.display = "none";
+			document.getElementById("mySidebar").style.display = "inline";
+		document.getElementById("kkm").style.display = "none";
+		document.getElementById("space_kkm").style.display = "none";
+		document.getElementById("space_kkm50").style.display = "inline";
+		document.getElementById("kkm50").style.display = "inline";
+	}
+	w3_close()
+</script>
 
 </body>
 </html>
