@@ -15,7 +15,7 @@
 		background-size: cover;
 	}
 	.fadeInFast {
-		animation:opac 0.3s;
+		animation:opac 0.4s;
 		@keyframes opac{from{opacity:0} to{opacity:1}};
 	}
 	.fadeInSlow {
@@ -32,12 +32,15 @@
 		-ms-transform:rotate(90deg);
 		transform:rotate(90deg);
 	}
+	.footer {
+		z-index: 2;
+	}
 </style>
 <body>
 
 
 <!-- Sidebar (hidden by default) -->
-<nav class="w3-sidebar w3-bar-block w3-top fadeInFast" style="display: inline; z-index: 2; width: 25%; min-width: 300px;" id="mySidebar" data-uialign="left">
+<nav class="w3-sidebar w3-bar-block w3-top" style="display: inline; z-index: 2; width: 25%; min-width: 300px;" id="mySidebar" data-uialign="left">
 <div class="w3-padding w3-left w3-white rotated w3-xxlarge" style="margin-top:32px!important;margin-bottom:32px!important;margin-left:32px!important;margin-right:32px!important;" onclick="w3_close()">☰</div>
 <div class="w3-row" style="padding-left:20px">
  <a href="#Konzept" onclick="sidebar_to_menu('konzept')" class="w3-bar-item" style="text-decoration: none;">
@@ -68,7 +71,7 @@
 	
 	
 <!-- MENUUUUU -->
-<nav class="w3-sidebar w3-bar-block w3-top fadeInFast" style="display: none; z-index: 2; width: 70%; min-width: 500px;" id="menu" data-uialign="left">
+<nav class="w3-sidebar w3-bar-block w3-top" style="display: none; z-index: 2; width: 70%; min-width: 500px;" id="menu" data-uialign="left">
 <div class="w3-row">
 	<div class="w3-padding w3-left w3-white rotated w3-xxlarge" style="margin-top:32px!important;margin-bottom:32px!important;margin-left:32px!important;margin-right:32px!important;" onclick="menu_to_sidebar()">☰</div>
  <div class="w3-col s2">
@@ -108,13 +111,16 @@
 		<div class="w3-col s2">
 		 &nbsp;
 		</div>
-		<div class="w3-col s8">
+		<div class="w3-col s7">
 		 <p class="w3-large">
 			<b>Konzept</b>
 		 </p>
 Alle reden von Nachhaltigkeit. Medien berichten davon und junge Menschen gehen dafür auf die Straße. Unternehmen suchen Innovationen und Politiker*innen beziehen Stellung. Es gibt viele Initiativen, die mit an einer sozialen, ökologischen und wirtschaftlich nachhaltigen Welt arbeiten.
 All das passiert auch in Kiel. Aber was genau? Wer macht das? Und wo ist Potenzial für mehr? Um die Auseinandersetzung mit einer nachhaltigen Zukunft in Kiel konstruktiv voranzubringen, findet das Kiel Kann Mehr Zukunftsfestival statt – mit einem für Kiel und darüber hinaus neuen Veranstaltungskonzept. Wir bringen einen Tag lang Bürger*innen mit Expert*innen und Entscheidungsträger*innen aus Politik, Wirtschaft und Forschung zusammen, um Impulse für eine ökologisch, sozial und wirtschaftlich nachhaltige Zukunft unserer Stadt zu setzen.
 Mitgestalten, Stellung beziehen, sichtbar machen. Kiel Kann Mehr!
+		</div>
+		 <div class="w3-col s2">
+		 <img src="logos/Logo.png" width="100%">
 		</div>
 	 </div>
 	</div>
@@ -148,6 +154,15 @@ text
 			<img src="img/kkmbild.jpg" width=100%>
 			<br>
 			Sie erreichen das Team per E-Mail an <a href="mailto:info@kielkannmehr.de">info@kielkannmehr.de</a> oder über die <a href="https://www.facebook.com/KielKannMehr/">Facebookseite.</a>
+			<br>
+			&nbsp;
+			<br>
+			<br>
+			&nbsp;
+			<br>
+			<br>
+			&nbsp;
+			<br>
 		</div>
 	 </div>
 	</div>
@@ -218,6 +233,11 @@ text
 	</div>
  </div>
 </div>
+	
+	<!-- Footer -->
+	<div class="footer w3-row w3-white w3-bottom w3-padding">
+		<a href="">Impressum</a> © 2020 / Initiative Kiel Kann Mehr <span style="float: right; padding: 0px;" > powered by <a href=""><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height=30px></a> und <a href=""><img src="https://spielinkiel.github.io/img/fn_logo.png" height=30px></a></span>
+	</div>
 </div>
 
 <script id="1939224650">
