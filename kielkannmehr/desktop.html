@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
-<title>KKM Templates</title>
+<title>KKM Desktop</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Courier+New">
 <style>
-body,h1 {font-family: "Raleway", sans-serif}
+body,h1 {font-family: "Courier New", sans-serif}
 body, html {height: 100%}
 .bgimg {
-  background-image: url('../img/sunset-4801688_1920.jpg');
+  background-image: url('Muster_aus_Symbolen.png');
   min-height: 100%;
   background-position: center;
   background-size: cover;
@@ -20,9 +20,7 @@ body, html {height: 100%}
 
 <!-- Sidebar (hidden by default) -->
 <nav class="w3-sidebar w3-bar-block w3-top fadeInFast" style="display: inline; z-index: 2; width: 25%; min-width: 300px;" id="mySidebar" data-uialign="left">
-<div class="w3-padding w3-left w3-white rotated w3-xxlarge" style="margin-top:32px!important;margin-bottom:32px!important;margin-left:32px!important;margin-right:32px!important;" onclick="w3_close()">
-  &nbsp; ☰ &nbsp;
-</div>
+<div class="w3-padding w3-left w3-white rotated w3-xxlarge" style="margin-top:32px!important;margin-bottom:32px!important;margin-left:32px!important;margin-right:32px!important;" onclick="w3_close()">☰</div>
 <div class="w3-row" style="padding-left:20px">
  <a href="#Konzept" onclick="sidebar_to_menu('konzept')" class="w3-bar-item" style="text-decoration: none;">
 	<img src="https://le-cdn.website-editor.net/6ceb4919ad7340f9bfcd8a41b9113bc8/dms3rep/multi/opt/Symbol_15-1920w.png" width="30px" no_space_b="true" no_space_e="true"/>
@@ -60,34 +58,28 @@ body, html {height: 100%}
 <!-- MENUUUUU -->
 <nav class="w3-sidebar w3-bar-block w3-top fadeInFast" style="display: none; z-index: 2; width: 70%; min-width: 500px;" id="menu" data-uialign="left">
 <div class="w3-row">
- <div class="w3-col s2">
-	<div class="w3-padding w3-left w3-white w3-xxlarge" style="margin-top:32px!important;margin-bottom:32px!important;margin-left:32px!important;margin-right:32px!important" onclick="menu_to_sidebar()">
+	<div class="w3-padding w3-left w3-white w3-large" style="margin-top:32px!important;margin-bottom:32px!important;margin-left:32px!important;margin-right:32px!important" onclick="menu_to_sidebar()">
 	 ☰
 	</div>
+ <div class="w3-col s2">
  </div>
  <div class="w3-col s9" style="margin-top:32px!important;margin-bottom:32px!important;margin-left:16px!important;margin-right:16px!important">
 	<a href="#Konzept" onclick="change_cat_menu('konzept')" style="text-decoration: none; padding:3px">
 	 <img src="https://le-cdn.website-editor.net/6ceb4919ad7340f9bfcd8a41b9113bc8/dms3rep/multi/opt/Symbol_15-1920w.png" width="30px"/>
-	 <p class="menucat font-size-NaN m-font-size-NaN" style=";display: none; text-decoration: none;">
+	 <p class="menucat font-size-NaN m-font-size-NaN" style=";display: none; text-decoration: none;" id="konzeptcat">
 		&nbsp; Konzept
 	 </p>
 	</a>
 	<a href="#Personen" onclick="change_cat_menu('personen')" style="text-decoration: none; padding:3px">
 	 <img src="https://le-cdn.website-editor.net/6ceb4919ad7340f9bfcd8a41b9113bc8/dms3rep/multi/opt/Symbol_0-1920w.png" width="30px"/>
-	 <p class="menucat font-size-NaN m-font-size-NaN" style="display: none; text-decoration: none;">
+	 <p class="menucat font-size-NaN m-font-size-NaN" style="display: none; text-decoration: none;" id="personencat">
 		&nbsp; &Uuml;ber uns
 	 </p>
 	</a>
 	<a href="#Unter" onclick="change_cat_menu('unter')" style="text-decoration: none; padding:3px">
 	 <img src="https://le-cdn.website-editor.net/6ceb4919ad7340f9bfcd8a41b9113bc8/dms3rep/multi/opt/Symbol_17-1920w.png" width="30px"/>
-	 <p class="menucat font-size-NaN m-font-size-NaN" style=";display: none; text-decoration: none;">
+	 <p class="menucat" style=";display: none; text-decoration: none;" id="untercat">
 		&nbsp; Unterst&uuml;tzer*innen
-	 </p>
-	</a>
-	<a href="#Impressum" onclick="change_cat_menu('impressum')" style="text-decoration: none; padding:3px">
-	 <img src="https://le-cdn.website-editor.net/6ceb4919ad7340f9bfcd8a41b9113bc8/dms3rep/multi/opt/Symbol_4-1920w.png" width="30px"/>
-	 <p class="menucat font-size-NaN m-font-size-NaN" style=";display: none; text-decoration: none;">
-		&nbsp; Impressum
 	 </p>
 	</a>
  </div>
@@ -95,7 +87,7 @@ body, html {height: 100%}
 	
 	
 	<!--  KONZEPT -->
-	<div class="menutext font-size-NaN m-font-size-NaN" style=";display:none;">
+	<div class="menutext" style=";display:none;" id="konzepttext">
 	 <div class="w3-row">
 		<div class="w3-col s2">
 		 &nbsp;
@@ -109,7 +101,7 @@ body, html {height: 100%}
 	 </div>
 	</div>
 	<!--  PERSONEN -->
-	<div class="menutext font-size-NaN m-font-size-NaN" style="display: none;">
+	<div class="menutext" style="display: none;" id="personentext">
 	 <div class="w3-row">
 		<div class="w3-col s2">
 		 &nbsp;
@@ -123,7 +115,7 @@ body, html {height: 100%}
 	 </div>
 	</div>
 	<!--  SPONSOR -->
-	<div class="menutext font-size-NaN m-font-size-NaN" style=";display:none;">
+	<div class="menutext" style=";display:none;" id="untertext">
 	 <div class="w3-row">
 		<div class="w3-col s2">
 		 &nbsp;
@@ -136,20 +128,7 @@ body, html {height: 100%}
 		</div>
 	 </div>
 	</div>
-	<!--  IMPRESSUM -->
-	<div class="menutext font-size-NaN m-font-size-NaN" style=";display:none;">
-	 <div class="w3-row">
-		<div class="w3-col s2">
-		 &nbsp;
-		</div>
-		<div class="w3-col s8">
-		 <h2>
-			Impressum
-		 </h2>
-		 beispiel
-		</div>
-	 </div>
-	</div>
+
  </nav>
 	
 <!-- MAIN VIEW -->
@@ -159,17 +138,17 @@ body, html {height: 100%}
  &nbsp;
 </div>
 <div class="w3-row">
- <div style=";display: inline;" class="font-size-NaN m-font-size-NaN">
+ <div style="display: inline;" id="space_kkm">
 	<div class="w3-col s3" style="">
 	 &nbsp;
 	</div>
  </div>
- <div style=";display: none;" class="font-size-NaN m-font-size-NaN">
+ <div style="display: none;" id="space_kkm50">
 	<div class="w3-col s5" style="">
 	 &nbsp;
 	</div>
  </div>
- <div style=";display: inline;" class="font-size-NaN m-font-size-NaN">
+ <div style="display: inline;" id="kkm">
 	<div class="w3-col s9 w3-white" style="">
 	 <h1 class="w3-jumbo w3-animate-right w3-wide" style="text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; padding-left:20px;" no_space_e="true">
 		<p font-family="Courier New" no_space_e="true">
@@ -180,16 +159,7 @@ body, html {height: 100%}
 		 <h1 class="w3-jumbo w3-animate-right w3-wide" style="text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; padding-left:20px;" no_space_b="true">
 			<p font-family="Courier New" no_space_b="true">
 			 KIEL KANN MEHR
-			</p>
-		 </h1>
-		 <h1 class="w3-jumbo w3-animate-right" style="text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; padding-left:20px;">
-			<p font-family="Courier New">
 			 ZUKUNFTSFESTIVAL
-			</p>
-		 </h1>
-		 <h1 class="w3-jumbo w3-animate-right w3-wide" style="text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; padding-left:20px;" no_space_e="true">
-			<p font-family="Courier New" no_space_e="true">
-			 05.06.2020
 			</p>
 		 </h1>
 		</span>
@@ -200,21 +170,12 @@ body, html {height: 100%}
 	 </h1>
 	</div>
  </div>
- <div style=";display: none;" class="font-size-NaN m-font-size-NaN">
+ <div style="display: none;" id="kkm50">
 	<div class="w3-col s7 w3-white" style="">
 	 <h1 class="w3-jumbo w3-wide" style="text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; padding-left:20px;">
 		<p font-family="Courier New">
 		 KIEL KANN MEHR
-		</p>
-	 </h1>
-	 <h1 class="w3-jumbo" style="text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; padding-left:20px;">
-		<p font-family="Courier New">
 		 ZUKUNFTSFESTIVAL
-		</p>
-	 </h1>
-	 <h1 class="w3-jumbo w3-wide" style="text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; padding-left:20px;">
-		<p font-family="Courier New">
-		 05.06.2020
 		</p>
 	 </h1>
 	</div>
@@ -225,22 +186,22 @@ body, html {height: 100%}
 <script id="1939224650">
 // Script to open and close sidebar
 	function w3_open() {
-			document.getElementById("mySidebar").style.display = "inline";
-			document.getElementById("space_kkm").style.display = "none";
-			document.getElementById("space_kkm50").style.display = "inline";
-			document.getElementById("kkm").style.display = "none";
-			document.getElementById("kkm50").style.display = "inline";
+		document.getElementById("mySidebar").style.display = "inline";
+		document.getElementById("space_kkm").style.display = "none";
+		document.getElementById("space_kkm50").style.display = "inline";
+		document.getElementById("kkm").style.display = "none";
+		document.getElementById("kkm50").style.display = "inline";
 	}
 	function w3_close() {
-			document.getElementById("mySidebar").style.display = "none";
+		document.getElementById("mySidebar").style.display = "none";
 		document.getElementById("space_kkm").style.display = "inline";
-			document.getElementById("space_kkm50").style.display = "none";
-			document.getElementById("kkm").style.display = "inline";
-			document.getElementById("kkm50").style.display = "none";
+		document.getElementById("space_kkm50").style.display = "none";
+		document.getElementById("kkm").style.display = "inline";
+		document.getElementById("kkm50").style.display = "none";
 	}
 	function sidebar_to_menu(category) {
 		document.getElementById("mySidebar").style.display = "none";
-			document.getElementById("menu").style.display = "inline";
+		document.getElementById("menu").style.display = "inline";
 		document.getElementById("kkm").style.display = "none";
 		document.getElementById("kkm50").style.display = "none";
 		hide_menu_cats();
@@ -248,31 +209,31 @@ body, html {height: 100%}
 		show_text(category);
 	}
 	function change_cat_menu(category) {
-			hide_menu_cats();
-			hide_menu_texts();
-			show_text(category);
+		hide_menu_cats();
+		hide_menu_texts();
+		show_text(category);
 	}
 	function show_text(category) {
-			var category_name = category.concat("cat");
-			document.getElementById(category_name).style.display = "inline";
-			var category_text = category.concat("text");
-			document.getElementById(category_text).style.display = "inline";
+		var category_name = category.concat("cat");
+		document.getElementById(category_name).style.display = "inline";
+		var category_text = category.concat("text");
+		document.getElementById(category_text).style.display = "inline";
 	}
 	function hide_menu_cats() {
-			var menu_cats = document.getElementsByClassName("menucat")
-	for (i = 0; i < menu_cats.length; i++) {
-		menu_cats[i].style.display = "none";
-	} 
+		var menu_cats = document.getElementsByClassName("menucat")
+		for (i = 0; i < menu_cats.length; i++) {
+			menu_cats[i].style.display = "none";
+		} 
 	}
 	function hide_menu_texts() {
-			var menu_texts = document.getElementsByClassName("menutext")
-	for (i = 0; i < menu_texts.length; i++) {
-		menu_texts[i].style.display = "none";
-	} 
+		var menu_texts = document.getElementsByClassName("menutext")
+		for (i = 0; i < menu_texts.length; i++) {
+			menu_texts[i].style.display = "none";
+		} 
 	}
 	function menu_to_sidebar() {
 		document.getElementById("menu").style.display = "none";
-			document.getElementById("mySidebar").style.display = "inline";
+		document.getElementById("mySidebar").style.display = "inline";
 		document.getElementById("kkm").style.display = "none";
 		document.getElementById("space_kkm").style.display = "none";
 		document.getElementById("space_kkm50").style.display = "inline";

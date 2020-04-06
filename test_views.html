@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<title>KKM Templates</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+.bgimg {
+  background-image: url('../img/sunset-4801688_1920.jpg');
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+</style>
+<body>
+
+<iframe id="desktop" src="https://kalou91.github.io/kielkannmehr/" width="100%" height="100%" style="display: none;">
+</iframe>
+<iframe id="handy" src="" width="100%" height="100%" style="display: none;">
+</iframe>
+	
+<script>
+function changePage() {
+		var w = window.innerWidth;
+		var h = window.innerHeight;
+		if (w < h) {
+				displayHandy();
+		}
+		else {
+				displayDesktop();
+		}
+		document.write("Width: " + w + "<br>Height: " + h);
+		console.log("Width: " + w + "<br>Height: " + h);
+	}
+	function displayHandy() {
+			document.getElementById("desktop").style.display = "none";
+			document.getElementById("handy").style.display = "block";
+	}
+	function displayDesktop() {
+			document.getElementById("desktop").style.display = "block";
+			document.getElementById("handy").style.display = "none";
+	}
+	changePage();
+</script>
+
+</body>
+</html>
