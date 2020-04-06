@@ -6,14 +6,32 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Courier+New">
 <style>
-body,h1 {font-family: "Courier New", sans-serif}
-body, html {height: 100%}
-.bgimg {
-  background-image: url('Muster_aus_Symbolen.png');
-  min-height: 100%;
-  background-position: center;
-  background-size: cover;
-}
+	body,h1 {font-family: "Courier New", sans-serif}
+	body, html {height: 100%}
+	.bgimg {
+		background-image: url('img/Muster_aus_Symbolen.png');
+		min-height: 100%;
+		background-position: center;
+		background-size: cover;
+	}
+	.fadeInFast {
+		animation:opac 0.3s;
+		@keyframes opac{from{opacity:0} to{opacity:1}};
+	}
+	.fadeInSlow {
+		animation:opac 5s;
+		@keyframes opac{from{opacity:0} to{opacity:1}};
+	}
+	div.nounderscore{
+		text-decoration:none
+	}
+	div.rotated{
+		-webkit-transform:rotate(90deg);
+		-moz-transform:rotate(90deg);
+		-o-transform:rotate(90deg);
+		-ms-transform:rotate(90deg);
+		transform:rotate(90deg);
+	}
 </style>
 <body>
 
@@ -28,7 +46,7 @@ body, html {height: 100%}
  </a>
 </div>
 <div class="w3-row" style="padding-left:20px">
- <a href="#Impressum" onclick="location.href = 'Aktuelles';" class="w3-bar-item" style="text-decoration: none;">
+ <a href="#Impressum" onclick="sidebar_to_menu('aktuelles')" class="w3-bar-item" style="text-decoration: none;">
 	<img src="https://le-cdn.website-editor.net/6ceb4919ad7340f9bfcd8a41b9113bc8/dms3rep/multi/opt/Symbol_3-1920w.png" width="30px" no_space_b="true" no_space_e="true"/>
 	&nbsp; Aktuelles
  </a>
@@ -45,12 +63,6 @@ body, html {height: 100%}
 	&nbsp; Unterst&uuml;tzer*innen
  </a>
 </div>
-<div class="w3-row" style="padding-left:20px">
- <a href="#Impressum" onclick="sidebar_to_menu('impressum')" class="w3-bar-item" style="text-decoration: none;">
-	<img src="https://le-cdn.website-editor.net/6ceb4919ad7340f9bfcd8a41b9113bc8/dms3rep/multi/opt/Symbol_4-1920w.png" width="30px" no_space_b="true" no_space_e="true"/>
-	&nbsp; Impressum
- </a>
-</div>
 </nav>
 	
 	
@@ -58,9 +70,7 @@ body, html {height: 100%}
 <!-- MENUUUUU -->
 <nav class="w3-sidebar w3-bar-block w3-top fadeInFast" style="display: none; z-index: 2; width: 70%; min-width: 500px;" id="menu" data-uialign="left">
 <div class="w3-row">
-	<div class="w3-padding w3-left w3-white w3-large" style="margin-top:32px!important;margin-bottom:32px!important;margin-left:32px!important;margin-right:32px!important" onclick="menu_to_sidebar()">
-	 ☰
-	</div>
+	<div class="w3-padding w3-left w3-white rotated w3-xxlarge" style="margin-top:32px!important;margin-bottom:32px!important;margin-left:32px!important;margin-right:32px!important;" onclick="menu_to_sidebar()">☰</div>
  <div class="w3-col s2">
  </div>
  <div class="w3-col s9" style="margin-top:32px!important;margin-bottom:32px!important;margin-left:16px!important;margin-right:16px!important">
@@ -68,6 +78,12 @@ body, html {height: 100%}
 	 <img src="https://le-cdn.website-editor.net/6ceb4919ad7340f9bfcd8a41b9113bc8/dms3rep/multi/opt/Symbol_15-1920w.png" width="30px"/>
 	 <p class="menucat font-size-NaN m-font-size-NaN" style=";display: none; text-decoration: none;" id="konzeptcat">
 		&nbsp; Konzept
+	 </p>
+	</a>
+	 <a href="#Aktuelles" onclick="change_cat_menu('aktuelles')" style="text-decoration: none; padding:3px">
+	 <img src="https://le-cdn.website-editor.net/6ceb4919ad7340f9bfcd8a41b9113bc8/dms3rep/multi/opt/Symbol_3-1920w.png" width="30px"/>
+	 <p class="menucat font-size-NaN m-font-size-NaN" style=";display: none; text-decoration: none;" id="aktuellescat">
+		&nbsp; Aktuelles
 	 </p>
 	</a>
 	<a href="#Personen" onclick="change_cat_menu('personen')" style="text-decoration: none; padding:3px">
@@ -93,10 +109,26 @@ body, html {height: 100%}
 		 &nbsp;
 		</div>
 		<div class="w3-col s8">
-		 <h2>
-			Konzept
-		 </h2>
-		 beispiel
+		 <p class="w3-large">
+			<b>Konzept</b>
+		 </p>
+Alle reden von Nachhaltigkeit. Medien berichten davon und junge Menschen gehen dafür auf die Straße. Unternehmen suchen Innovationen und Politiker*innen beziehen Stellung. Es gibt viele Initiativen, die mit an einer sozialen, ökologischen und wirtschaftlich nachhaltigen Welt arbeiten.
+All das passiert auch in Kiel. Aber was genau? Wer macht das? Und wo ist Potenzial für mehr? Um die Auseinandersetzung mit einer nachhaltigen Zukunft in Kiel konstruktiv voranzubringen, findet das Kiel Kann Mehr Zukunftsfestival statt – mit einem für Kiel und darüber hinaus neuen Veranstaltungskonzept. Wir bringen einen Tag lang Bürger*innen mit Expert*innen und Entscheidungsträger*innen aus Politik, Wirtschaft und Forschung zusammen, um Impulse für eine ökologisch, sozial und wirtschaftlich nachhaltige Zukunft unserer Stadt zu setzen.
+Mitgestalten, Stellung beziehen, sichtbar machen. Kiel Kann Mehr!
+		</div>
+	 </div>
+	</div>
+		<!--  AKTUELLES -->
+	<div class="menutext" style=";display:none;" id="aktuellestext">
+	 <div class="w3-row">
+		<div class="w3-col s2">
+		 &nbsp;
+		</div>
+		<div class="w3-col s8">
+		 <p class="w3-large">
+			<b>Aktuelles</b>
+		 </p>
+text
 		</div>
 	 </div>
 	</div>
@@ -107,10 +139,15 @@ body, html {height: 100%}
 		 &nbsp;
 		</div>
 		<div class="w3-col s8">
-		 <h2>
-			Personen
-		 </h2>
-		 beispiel
+		 <p class="w3-large">
+			<b>Über uns</b>
+		 </p>
+			Das Kiel Kann Mehr Zukunftsfestival wird organisiert von Studierenden der School of Sustainability an der Christian-Albrechts-Universität zu Kiel.<br>
+			Im Foto von links oben nach rechts unten: Hauke Dentzin, Mareike Chalkley, Sabrina Grape, Lisa Vagts, Maura Rafelt, Jonas Mayer
+			<br>
+			<img src="img/kkmbild.jpg" width=100%>
+			<br>
+			Sie erreichen das Team per E-Mail an <a href="mailto:info@kielkannmehr.de">info@kielkannmehr.de</a> oder über die <a href="https://www.facebook.com/KielKannMehr/">Facebookseite.</a>
 		</div>
 	 </div>
 	</div>
@@ -121,10 +158,10 @@ body, html {height: 100%}
 		 &nbsp;
 		</div>
 		<div class="w3-col s8">
-		 <h2>
-			Unterst&uuml;tzer*innen
-		 </h2>
-		 beispiel
+			<p class="w3-large">
+			<b>Unterst&uuml;tzer*innen</b>
+		 </p>
+		 beispiel text
 		</div>
 	 </div>
 	</div>
