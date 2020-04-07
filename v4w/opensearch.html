@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<title>OpenSearch</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+body,h1 {font-family: "SourceCode", sans-serif}
+body, html {height: 100%}
+	.bgimg {
+		background-image: url('img_w_0.png');
+		min-height: 100%;
+		background-size: 55% 60%;
+		background-repeat; repeat;
+	}
+	.together a {
+		color: #FFFFFF;
+		text-decoration: none;
+	}
+	div.nounderscore {
+		text-decoration: none;
+	}
+	div.rotated {
+			-webkit-transform: rotate(90deg);
+			-moz-transform: rotate(90deg);
+			-o-transform: rotate(90deg);
+			-ms-transform: rotate(90deg);
+			transform: rotate(90deg);
+	}
+	.searchfield {
+		padding: 10px;
+		border-radius: 20px;
+		text-align: center;
+	}
+	.categories {
+	}
+	.logos {
+		width: 100%;
+		min-width: 100%;
+		margin-left: 6%;
+		margin-right: 6%;
+		
+		
+	}
+	.logo {
+		width: 25%;
+		max-width: 25%;
+		display: inline;
+		margin: 1%;
+	}
+	.ost {
+		
+	}
+</style>
+<body>
+	
+	<div class="title w3-center w3-xxlarge w3-padding" style="margin-top: 64px;">OpenSearch</div>
+	<div class="searchfield"><input type="text" id="lname" name="lname" class="searchfield w3-center"><br><br></div>
+	<div class="categories w3-text w3-large w3-center">
+			<a onclick="showOnly('ost')" id="ost" class="catbutton">All</a> / 
+			<a onclick="showOnly('video')" id="video" class="catbutton" >Video</a> / 
+			<a onclick="showOnly('code')" id="code" class="catbutton" >Code</a> / 
+			<a onclick="showOnly('msg')" id="msg" class="catbutton">Messaging</a> /
+			<a onclick="showOnly('text')" id="text" class="catbutton">Text</a> /
+		  <a onclick="showOnly('game')" id="game" class="catbutton">Games</a> 
+		</div>
+	
+	<br>
+	
+	<div class="logos">
+		<div class="logo ost code"><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="20%"></div>
+		<div class="logo ost video"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5d/Logo_Jitsi.svg" width="20%"></div>
+		<div class="logo ost msg"><img src="https://telegram.org/img/t_logo.png" width="20%"></div>
+		<div class="logo ost text"><img src="https://upload.wikimedia.org/wikipedia/commons/f/ff/Logo_Etherpad.png" width="20%"></div>
+		<div class="logo ost os"><img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Tux.png" width="20%"></div>
+		<div class="logo ost game"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Logo_de_SuperTuxKart.png/286px-Logo_de_SuperTuxKart.png" width="20%"></div>
+		<div class="logo ost msg"><img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Riot.im_Logo.png" width="20%"></div>
+		<div class="logo ost video"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/VLC_Icon.svg" width="20%"></div>
+
+		
+		
+	</div>
+<script>
+
+function showOnly(category) {
+	var button_categories = document.getElementsByClassName("catbutton")
+	for (i = 0; i < button_categories.length; i++) {
+		button_categories[i].style.opacity = 0.45;
+	} 
+	document.getElementById(category).style.opacity = 1;
+	var suggestions = document.getElementsByClassName("ost")
+	for (i = 0; i < suggestions.length; i++) {
+		suggestions[i].style.display = "none";
+	} 
+	var suggestions_to_show = document.getElementsByClassName(category)
+	for (i = 0; i < suggestions_to_show.length; i++) {
+		suggestions_to_show[i].style.display = "inline";
+	} 
+	
+}
+
+</script>
+</body>
+</html>
